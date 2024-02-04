@@ -1,0 +1,132 @@
+@use "../../../styles/variables.scss";
+
+.sidebar {
+  background: variables.$color-offWhite;
+  width: 70px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  min-height: 500px;
+  .logo {
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+    .logoTitle {
+      text-align: center;
+      font-family: variables.$font-ubuntu;
+      font-weight: bolder;
+      font-size: 1.8em;
+      padding: 8px auto;
+      color: variables.$color-mediumGrey;
+      &:hover {
+        color: variables.$color-darkBlack;
+      }
+    }
+  }
+  nav {
+    display: block;
+    text-align: center;
+    position: absolute;
+    height: 210px;
+    width: 100%;
+    margin-top: -250px;
+    top: 50%;
+    a {
+      font-size: 24px;
+      color: variables.$color-mediumGrey;
+      display: block;
+      line-height: 51px;
+      height: 51px;
+      position: relative;
+      text-decoration: none;
+      i {
+        transition: all 0.3s ease-out;
+      }
+      &:hover {
+        color: variables.$color-white;
+        background-color: variables.$color-darkRed;
+        svg {
+          opacity: 0;
+        }
+        &:after {
+          opacity: 1;
+        }
+      }
+      &:after {
+        content: "";
+        font-size: 10px;
+        font-weight: 800;
+        font-family: variables.$font-ubuntu;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        transition: all 0.3s ease-out;
+      }
+      &:first-child {
+        &:after {
+          content: "HOME";
+        }
+      }
+    }
+    a.about {
+      &:after {
+        content: "ABOUT";
+      }
+    }
+    a.skill {
+      &:after {
+        content: "SKILLS";
+      }
+    }
+    a.project {
+      &:after {
+        content: "PROJECTS";
+      }
+    }
+    a.contact {
+      &:after {
+        content: "CONTACT";
+      }
+    }
+    a.active {
+      svg {
+        color: variables.$color-white;
+        padding: 14px 0;
+        background-color: variables.$color-darkRed;
+        width: 100%;
+      }
+    }
+  }
+  .socialMedia {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: block;
+    hr{
+        border: 1px solid variables.$color-mediumGrey;
+    }
+    ul {
+      padding: 0;
+      list-style: none;
+      text-align: center;
+      margin: 0;
+      li {
+        a {
+          padding: 6px 0;
+          display: block;
+          font-size: 18px;
+          line-height: 16px;
+        }
+        &:hover svg {
+          color: variables.$color-darkRed;
+        }
+      }
+    }
+   
+  }
+}
