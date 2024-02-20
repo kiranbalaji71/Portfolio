@@ -63,7 +63,7 @@ const Home = () => {
               <i className="arrowLeft" />
             </div>
             <div className="photo">
-              <img src={Photo} alt="photo-showing-hi" />
+              <img src={Photo} alt="Person saying hi" />
             </div>
           </div>
         </div>
